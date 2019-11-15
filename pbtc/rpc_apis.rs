@@ -1,7 +1,7 @@
 use std::str::FromStr;
 use std::collections::HashSet;
-use rpc::Dependencies;
-use ethcore_rpc::MetaIoHandler;
+use crate::rpc::Dependencies;
+use crate::ethcore_rpc::MetaIoHandler;
 
 #[derive(Debug, PartialEq, Eq, Hash, Copy, Clone)]
 pub enum Api {
@@ -49,7 +49,7 @@ impl ApiSet {
 }
 
 pub fn setup_rpc(mut handler: MetaIoHandler<()>, apis: ApiSet, deps: Dependencies) -> MetaIoHandler<()> {
-	use ethcore_rpc::v1::*;
+	use crate::ethcore_rpc::v1::*;
 
 	for api in apis.list_apis() {
 		match api {

@@ -1,7 +1,7 @@
 use std::io;
-use hash::H256;
-use crypto::{DHash256, Digest};
-use ser::{Reader, Error as ReaderError, Deserializable};
+use crate::hash::H256;
+use crate::crypto::{DHash256, Digest};
+use crate::ser::{Reader, Error as ReaderError, Deserializable};
 
 pub struct HashedData<T> {
 	pub size: usize,

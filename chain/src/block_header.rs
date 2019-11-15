@@ -1,9 +1,9 @@
 use std::fmt;
-use hex::FromHex;
-use ser::{deserialize, serialize};
-use crypto::dhash256;
-use compact::Compact;
-use hash::H256;
+use crate::hex::FromHex;
+use crate::ser::{deserialize, serialize};
+use crate::crypto::dhash256;
+use crate::compact::Compact;
+use crate::hash::H256;
 
 #[derive(PartialEq, Clone, Serializable, Deserializable)]
 pub struct BlockHeader {
@@ -49,7 +49,7 @@ pub(crate) fn block_header_hash(block_header: &BlockHeader) -> H256 {
 
 #[cfg(test)]
 mod tests {
-	use ser::{Reader, Error as ReaderError, Stream};
+	use crate::ser::{Reader, Error as ReaderError, Stream};
 	use super::BlockHeader;
 
 	#[test]

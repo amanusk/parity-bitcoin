@@ -3,13 +3,13 @@
 
 use std::io;
 use heapsize::HeapSizeOf;
-use hex::FromHex;
-use bytes::Bytes;
-use ser::{deserialize, serialize, serialize_with_flags, SERIALIZE_TRANSACTION_WITNESS};
-use crypto::dhash256;
-use hash::H256;
-use constants::{SEQUENCE_FINAL, LOCKTIME_THRESHOLD};
-use ser::{Error, Serializable, Deserializable, Stream, Reader};
+use crate::hex::FromHex;
+use crate::bytes::Bytes;
+use crate::ser::{deserialize, serialize, serialize_with_flags, SERIALIZE_TRANSACTION_WITNESS};
+use crate::crypto::dhash256;
+use crate::hash::H256;
+use crate::constants::{SEQUENCE_FINAL, LOCKTIME_THRESHOLD};
+use crate::ser::{Error, Serializable, Deserializable, Stream, Reader};
 
 /// Must be zero.
 const WITNESS_MARKER: u8 = 0;
@@ -266,8 +266,8 @@ pub(crate) fn transaction_hash(transaction: &Transaction) -> H256 {
 
 #[cfg(test)]
 mod tests {
-	use hash::H256;
-	use ser::{Serializable, serialize_with_flags, SERIALIZE_TRANSACTION_WITNESS};
+	use crate::hash::H256;
+	use crate::ser::{Serializable, serialize_with_flags, SERIALIZE_TRANSACTION_WITNESS};
 	use super::{Transaction, TransactionInput, OutPoint, TransactionOutput};
 
 	// real transaction from block 80000

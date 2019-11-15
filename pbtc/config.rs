@@ -4,14 +4,14 @@ use storage;
 use message::Services;
 use network::{Network, ConsensusParams, ConsensusFork, BitcoinCashConsensusParams};
 use p2p::InternetProtocol;
-use seednodes::{mainnet_seednodes, testnet_seednodes, bitcoin_cash_seednodes, bitcoin_cash_testnet_seednodes};
-use rpc_apis::ApiSet;
-use {USER_AGENT, REGTEST_USER_AGENT};
+use crate::seednodes::{mainnet_seednodes, testnet_seednodes, bitcoin_cash_seednodes, bitcoin_cash_testnet_seednodes};
+use crate::rpc_apis::ApiSet;
+use crate::{USER_AGENT, REGTEST_USER_AGENT};
 use primitives::hash::H256;
-use rpc::HttpConfiguration as RpcHttpConfig;
+use crate::rpc::HttpConfiguration as RpcHttpConfig;
 use verification::VerificationLevel;
 use sync::VerificationParameters;
-use util::open_db;
+use crate::util::open_db;
 
 pub struct Config {
 	pub network: Network,

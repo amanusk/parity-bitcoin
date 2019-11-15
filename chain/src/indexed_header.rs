@@ -1,8 +1,8 @@
 use std::{io, cmp, fmt};
-use hash::H256;
-use ser::{Deserializable, Reader, Error as ReaderError};
-use block_header::{BlockHeader, block_header_hash};
-use read_and_hash::ReadAndHash;
+use crate::hash::H256;
+use crate::ser::{Deserializable, Reader, Error as ReaderError};
+use crate::block_header::{BlockHeader, block_header_hash};
+use crate::read_and_hash::ReadAndHash;
 
 #[derive(Clone)]
 pub struct IndexedBlockHeader {

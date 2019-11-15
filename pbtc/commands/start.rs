@@ -5,8 +5,8 @@ use std::sync::mpsc::{channel, Sender, Receiver};
 use std::sync::atomic::{AtomicBool, Ordering};
 use sync::{create_sync_peers, create_local_sync_node, create_sync_connection_factory, SyncListener};
 use primitives::hash::H256;
-use util::{init_db, node_table_path};
-use {config, p2p, PROTOCOL_VERSION, PROTOCOL_MINIMUM};
+use crate::util::{init_db, node_table_path};
+use crate::{config, p2p, PROTOCOL_VERSION, PROTOCOL_MINIMUM};
 use super::super::rpc;
 
 enum BlockNotifierTask {

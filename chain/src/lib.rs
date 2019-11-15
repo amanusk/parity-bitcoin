@@ -22,14 +22,14 @@ mod indexed_transaction;
 
 pub use primitives::{hash, bytes, bigint, compact};
 
-pub use block::Block;
-pub use block_header::BlockHeader;
-pub use merkle_root::{merkle_root, merkle_node_hash};
-pub use transaction::{Transaction, TransactionInput, TransactionOutput, OutPoint};
+pub use crate::block::Block;
+pub use crate::block_header::BlockHeader;
+pub use crate::merkle_root::{merkle_root, merkle_node_hash};
+pub use crate::transaction::{Transaction, TransactionInput, TransactionOutput, OutPoint};
 
-pub use read_and_hash::{ReadAndHash, HashedData};
-pub use indexed_block::IndexedBlock;
-pub use indexed_header::IndexedBlockHeader;
-pub use indexed_transaction::IndexedTransaction;
+pub use crate::read_and_hash::{ReadAndHash, HashedData};
+pub use crate::indexed_block::IndexedBlock;
+pub use crate::indexed_header::IndexedBlockHeader;
+pub use crate::indexed_transaction::IndexedTransaction;
 
 pub type ShortTransactionID = hash::H48;

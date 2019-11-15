@@ -1,5 +1,5 @@
-use crypto::dhash256;
-use hash::{H256, H512};
+use crate::crypto::dhash256;
+use crate::hash::{H256, H512};
 use rayon::prelude::{IntoParallelRefIterator, ParallelIterator};
 
 #[inline]
@@ -45,7 +45,7 @@ pub fn merkle_node_hash<T>(left: T, right: T) -> H256 where T: AsRef<H256> {
 
 #[cfg(test)]
 mod tests {
-	use hash::H256;
+	use crate::hash::H256;
 	use super::merkle_root;
 
 	// block 80_000

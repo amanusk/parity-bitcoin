@@ -1,12 +1,12 @@
 use std::cmp;
-use hash::H256;
-use hex::FromHex;
-use ser::{Serializable, serialized_list_size, serialized_list_size_with_flags, deserialize, SERIALIZE_TRANSACTION_WITNESS};
-use block::Block;
-use transaction::Transaction;
-use merkle_root::merkle_root;
-use indexed_header::IndexedBlockHeader;
-use indexed_transaction::IndexedTransaction;
+use crate::hash::H256;
+use crate::hex::FromHex;
+use crate::ser::{Serializable, serialized_list_size, serialized_list_size_with_flags, deserialize, SERIALIZE_TRANSACTION_WITNESS};
+use crate::block::Block;
+use crate::transaction::Transaction;
+use crate::merkle_root::merkle_root;
+use crate::indexed_header::IndexedBlockHeader;
+use crate::indexed_transaction::IndexedTransaction;
 
 #[derive(Debug, Clone, Deserializable)]
 pub struct IndexedBlock {
