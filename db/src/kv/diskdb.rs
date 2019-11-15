@@ -211,7 +211,8 @@ impl Database {
 						// retry and create CFs
 						match DB::open_cf(&opts, &path, &[], &[]) {
 							Ok(mut db) => {
-								cfs = try!(cfnames.iter().enumerate().map(|(i, n)| db.create_cf(n, &cf_options[i])).collect());
+								let res: Result<Vec<_>, _> = cfnames.iter().enumerate().map(|(i, n)| db.create_cf(n, &cf_options[i])).collect();
+								cfs = res?;
 								Ok(db)
 							},
 							err @ Err(_) => err,
