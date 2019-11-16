@@ -2,7 +2,7 @@
 
 use std::collections::HashMap;
 use std::path::Path;
-use rocksdb::{
+use parity_rocksdb::{
 	DB, Writable, WriteBatch, WriteOptions, IteratorMode, DBIterator,
 	Options, DBCompactionStyle, BlockBasedOptions, Cache, Column, ReadOptions
 };
